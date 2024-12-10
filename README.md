@@ -46,7 +46,7 @@ cd FreshShop
 python -m venv venv
 ```
 ### 3. Activate virtual environment
-# For Windows:
+### For Windows:
 ```bash
 venv\Scripts\activate
 ```
