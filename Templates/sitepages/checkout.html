@@ -1,0 +1,20 @@
+{% extends 'sitepages/base.html' %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<div class="container text-center mt-5">
+    <!-- Success Message -->
+    <div class="container ">
+        <div class="card-body">
+            <h1 class="display-5 text-success">Thank You for Shopping!</h1>
+            <p class="lead mt-3">Your order has been successfully placed.</p>
+            <p>We appreciate your business and hope to see you again soon.</p>
+            
+            <!-- Buttons -->
+            <div class="mt-4">
+                <a href="{% url 'products' %}" class="btn btn-primary btn-lg">Continue Shopping</a>
+                <a href="{% url 'view_cart' %}" class="btn btn-outline-secondary btn-lg">View Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

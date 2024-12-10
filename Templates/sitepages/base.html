@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+
+    <title>{% block title %} FreshShop {% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+    <div class="container">
+        <!-- Company Name -->
+        <a class="navbar-brand title" href="#">FreshShop</a>
+
+        <!-- Burger Menu Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto gap-4 text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'view_cart' %}">CART</a>
+                </li>
+            </ul>
+
+            <!-- Modern Search Box -->
+            <form method="GET" action="{% url 'search' %}" class="d-flex align-items-center ms-auto me-3 search-bar">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control rounded-start-pill" placeholder="Search..." required>
+                    <button type="submit" class="btn btn-primary rounded-end-pill">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Login/Logout Button -->
+            <div class="text-center">
+              {% if user.is_authenticated %}
+              <a href="{% url 'logout' %}" class="btn btn-login">Logout</a>
+          {% else %}
+              <a href="{% url 'login' %}" class="btn btn-login">Login</a>
+          {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    
+
+    {% block content %}
+
+    {% endblock %}
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+<!-- Bootstrap 5 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

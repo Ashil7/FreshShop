@@ -1,0 +1,211 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Bold Navigation Links with Animation */
+.nav-link {
+    color: #fff !important;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffefba;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #ffefba !important;
+}
+
+/* Modern Search Bar */
+.search-bar .form-control {
+    border: 2px solid  #9d9d9d;
+    border-right: none;
+    box-shadow: none;
+}
+
+.search-bar .form-control:focus {
+    border-color: #9d9d9d;
+    
+}
+
+.search-bar .btn {
+    border: 2px solid #9d9d9d;
+    border-left: none;
+    background-color: #ffffff;
+    color:  #9d9d9d;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Rounded Search Bar */
+.input-group .form-control,
+.input-group .btn {
+    border-radius: 50px;
+}
+
+
+/* Rounded Login/Logout Button */
+.btn-login {
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: #ffefba;
+    color: #333;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #ffd86e;
+    transform: scale(1.05);
+}
+
+.title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Card Styling */
+/* Card Border and Shadow Styling */
+.card {
+    border: 1px solid #ddd !important; 
+    border-radius: .5rem !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Image Styling */
+.card-img-container {
+    overflow: hidden;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+
+.card-img-top {
+    object-fit: cover;
+    width: 100%;
+    height: 8rem; /* Fixed height for images */
+}
+
+/* Card Body Text */
+.card-body h6 {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.card-body p {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Buttons */
+.btn-sm {
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-sm:hover {
+    background-color: #008c13;
+    transform: scale(1.1);
+}
+
+.pagination .btn {
+    
+    border-radius: 50px;
+    padding: 8px 15px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .btn:hover {
+    background-color: #2575fc;
+    color: white;
+}
+
+.pagination .current {
+    
+    color: rgb(133, 133, 133);
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.btn-sm1 {
+   
+    transition: all 0.5s ease;
+    font-size: 0.8rem;
+    width: 2.5rem; 
+    height: 2.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.btn-sm1::after {
+    content: "+";
+    font-weight: bolder;
+    position: absolute;
+    transition: opacity 0.5s ease, content 0.5s ease;
+}
+
+
+.btn-sm1:hover::after {
+    content: "Add to Cart"; 
+    font-size: 0.8rem;
+}
+
+
+.btn-sm1:hover {
+    width: 7rem; 
+    background-color: #ffffff; 
+    color: #28a745; 
+    border: 2px solid #28a745;
+    text-align: center;
+}
+.image-banner {
+    
+    padding-top: 25px;
+    height: 300px;
+    border-radius: 15px; /* Adjust height */
+    
+}
+.image-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    border-radius: 15px;
+     /* Maintain aspect ratio */
+}
+

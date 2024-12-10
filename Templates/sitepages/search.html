@@ -1,0 +1,63 @@
+{% extends 'sitepages/base.html' %}
+{% block title %} Search Results {% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4 title">Search Results</h2>
+
+    <!-- Display Search Term -->
+    {% if query %}
+        <p class="text-center">Showing results for: <strong>{{ query }}</strong></p>
+    {% endif %}
+
+    <!-- Results Grid -->
+    <div class="row justify-content-between g-4">
+        {% for item in items %}
+        <div class="col-6 col-sm-4 col-md-3 d-flex justify-content-center">
+            <!-- Square Modern Card -->
+            <div class="card shadow-sm rounded-3" style="width: 12rem; height: 16rem; transition: all 0.3s ease;">
+                <!-- Image -->
+                <div class="card-img-container position-relative">
+                    <img src="{{ item.image.url }}" class="card-img-top img-fluid" alt="item_image"
+                         style="height: 8rem; object-fit: cover;">
+                </div>
+                <!-- Card Body -->
+                <div class="card-body text-center p-2">
+                    <h6 class="card-title text-truncate fw-bold mb-1">{{ item.name }}</h6>
+                    <p class="card-text small text-secondary text-truncate" style="max-height: 2rem;">
+                        {{ item.description }}
+                    </p>
+                    <strong class="card-text mb-1"><i class="fa-solid fa-indian-rupee-sign"></i> {{ item.price }}</strong>
+                </div>
+                <!-- Footer -->
+                <div class="card-footer bg-white border-0 rounded-4 d-flex justify-content-center p-1">
+                    <a href="{% url 'add_to_cart' item.id %}" class="btn btn-success btn-sm px-3">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">No results found for "{{ query }}".</p>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination d-flex justify-content-center mt-5">
+        <span class="step-links">
+            {% if items.has_previous %}
+                <a href="?q={{ query }}&page=1" class="btn btn-outline-primary mx-1">&laquo; First</a>
+                <a href="?q={{ query }}&page={{ items.previous_page_number }}" class="btn btn-outline-primary mx-1">Previous</a>
+            {% endif %}
+
+            <span class="current mx-2">
+                Page {{ items.number }} of {{ items.paginator.num_pages }}
+            </span>
+
+            {% if items.has_next %}
+                <a href="?q={{ query }}&page={{ items.next_page_number }}" class="btn btn-outline-primary mx-1">Next</a>
+                <a href="?q={{ query }}&page={{ items.paginator.num_pages }}" class="btn btn-outline-primary mx-1">Last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{% endblock %}
