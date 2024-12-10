@@ -51,11 +51,11 @@ python -m venv venv
 venv\Scripts\activate
 ```
 ### 4. Configure MySQL Database
-## 1. Create Database
+### 1. Create Database
 ```sql
 CREATE DATABASE freshshop;
 ```
-## 2. Update setting.py
+### 2. Update setting.py
 ```python
 DATABASES = {
     'default': {
