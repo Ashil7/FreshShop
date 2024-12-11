@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-pip install django
-pip install mysqlclient
-pip install pillow
-=======
 django
 mysqlclient
 pillow
->>>>>>> 02edfa5 (requirements updated)
+
